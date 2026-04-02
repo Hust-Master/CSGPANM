@@ -1,0 +1,41 @@
+\documentclass[a4paper,12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\title{BÁO CÁO HỆ THỐNG}
+\author{Minh}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\chapter{Giới thiệu}
+Đây là phần mở đầu báo cáo.
+
+\section{Mục tiêu}
+Mô tả mục tiêu hệ thống.
+
+\chapter{Thiết kế hệ thống}
+Kiến trúc hệ thống như Hình~\ref{fig:arch}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/architecture.png}
+    \caption{Kiến trúc hệ thống}
+    \label{fig:arch}
+\end{figure}
+
+\chapter{Kết luận}
+Kết quả đạt được.
+
+\end{document}
