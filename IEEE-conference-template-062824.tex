@@ -3,6 +3,9 @@
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 %Template version as of 6/27/2024
 
+\usepackage[T5]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[vietnamese]{babel}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
@@ -13,281 +16,223 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Conference Paper Title*\\
-{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured for https://ieeexplore.ieee.org  and
-should not be used}
-\thanks{Identify applicable funding agency here. If none, delete this.}
+\title{Đánh giá và Thực hành Toàn diện về Kiểm thử Xâm nhập Hệ thống\\
+{\footnotesize \textsuperscript{*}Lưu ý: Phụ đề không được ghi lại cho https://ieeexplore.ieee.org và không nên sử dụng}
+\thanks{Chunyi Zhang và Jin Zeng đóng góp công bằng cho nghiên cứu này.}
 }
-
-\author{\IEEEauthorblockN{1\textsuperscript{st} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+ 
+\author{\IEEEauthorblockN{Hoàng Quốc Trọng}
+\IEEEauthorblockA{\textit{Trường Công nghệ Thông tin và} \\
+\textit{Truyền thông} \\
+Đại học Bách Khoa Hà Nội \\
+Hà Nội, Việt Nam \\
+trong.hq232093M@sis.hust.edu.vn} \\
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Ngô Công Dũng}
+\IEEEauthorblockA{\textit{Trường Công nghệ Thông tin và} \\
+\textit{Truyền thông} \\
+Đại học Bách Khoa Hà Nội \\
+Hà Nội, Việt Nam \\
+dung.nc252641M@sis.hust.edu.vn} \\
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-\and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
-}
+\IEEEauthorblockN{Đoàn Ngọc Minh}
+\IEEEauthorblockA{\textit{Trường Công nghệ Thông tin và} \\
+\textit{Truyền thông} \\
+Đại học Bách Khoa Hà Nội \\
+Hà Nội, Việt Nam \\
+minh.dn251067m@sis.hust.edu.vn}}
 
 \maketitle
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+Với sự tiến bộ nhanh chóng của công nghệ thông tin, độ phức tạp của các ứng dụng ngày càng tăng, và những thách thức về an ninh mạng mà chúng ta đối mặt cũng đang leo thang. Bài báo này nhằm mục đích nghiên cứu các phương pháp và thực hành kiểm thử xâm nhập bảo mật hệ thống, khám phá cách tăng cường an ninh hệ thống thông qua các quy trình kiểm thử xâm nhập có hệ thống và các phương pháp kỹ thuật. Bài báo cũng xem xét các công cụ xâm nhập hiện có, phân tích điểm mạnh, điểm yếu và các lĩnh vực áp dụng của chúng để hướng dẫn các kiểm thử viên trong việc lựa chọn công cụ. Ngoài ra, dựa trên quy trình kiểm thử xâm nhập được phác thảo trong bài báo này, các công cụ thích hợp được lựa chọn để tái hiện các quy trình tấn công bằng cách sử dụng các phạm vi mục tiêu và máy mục tiêu. Cuối cùng, thông qua phân tích tình huống thực tế, các bài học rút ra từ các cuộc tấn công thành công được tóm tắt để cung cấp thông tin cho nghiên cứu trong tương lai.
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert.
+kiểm thử xâm nhập, an ninh mạng, quy trình kiểm thử, đánh giá công cụ, tấn công thực nghiệm.
 \end{IEEEkeywords}
 
-\section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. For more information about how to become an IEEE Conference author or how to write your paper, please visit   IEEE Conference Author Center website: https://conferences.ieeeauthorcenter.ieee.org/.
+\section{Giới thiệu}
+Làn sóng tin học hóa hiện nay chắc chắn đã quét qua toàn cầu, đưa con người trên toàn thế giới vào một môi trường xã hội được kết nối mạng và số hóa. Kể từ năm 2018, khoảng 900.000 cá nhân đã lên mạng lần đầu tiên mỗi ngày [30]. Dựa trên tốc độ này, tính đến tháng 6 năm 2024, cơ sở người dùng internet của Trung Quốc chiếm khoảng 78,5\% tổng dân số. Cơ sở người dùng internet toàn cầu đã tăng lên mức kỷ lục 5,3 tỷ người. Dự kiến con số này sẽ đạt 6,6 tỷ trên toàn thế giới vào năm 2025. Điều này nhấn mạnh vai trò nòng cốt của internet trong xã hội loài người. Ngoài việc đóng vai trò là cơ sở hạ tầng nền tảng cho sự phát triển kỹ thuật số của Trung Quốc, nó còn tạo thành một biện pháp cơ bản để xây dựng một cộng đồng toàn cầu. 
 
-\subsection{Maintaining the Integrity of the Specifications}
+Bên dưới bề mặt của những tiến bộ CNTT nhanh chóng, các cuộc tấn công mạng bất hợp pháp đã âm ỉ từ lâu. Nhiều tội phạm khai thác các kỹ thuật hack để nhắm mục tiêu vào các hệ thống nhằm thu lợi bất hợp pháp. Ví dụ, cuộc tấn công trộm cắp dữ liệu MOVEit Transfer đã khai thác một lỗ hổng dịch vụ truyền tệp, dẫn đến các cuộc tấn công độc hại nhằm vào hơn 2.000 tổ chức và làm lộ hơn 93 triệu hồ sơ người dùng [16]. Nhiều trường hợp tấn công tương tự tồn tại, mỗi trường hợp đại diện cho các hoạt động bất hợp pháp nghiêm trọng xâm phạm nghiêm trọng đến an ninh mạng, gây ra những tổn thất không thể lường trước cho các quốc gia, doanh nghiệp và cá nhân. Việc sử dụng các phương pháp hiệu quả để xác định các rủi ro hệ thống và triển khai các biện pháp phòng thủ tương ứng để bảo vệ các hệ thống mạng và thúc đẩy một môi trường trực tuyến an toàn là điều cấp thiết. Chỉ bằng cách áp dụng quan điểm của kẻ tấn công, chúng ta mới có thể thực hiện đánh giá toàn diện về hệ thống. Đây chính là lý do tại sao kiểm thử xâm nhập ra đời [12].
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+Nghiên cứu hiện tại chủ yếu chia nó thành kiểm thử thủ công truyền thống và kiểm thử tự động [8]. Tuy nhiên, cả hai về cơ bản đều áp dụng quan điểm của hacker, nhắm vào các lỗ hổng hệ thống và sử dụng tất cả các phương pháp tấn công có thể để cố gắng xâm nhập hệ thống, từ đó đạt được mục tiêu chính là đánh giá bảo mật. Các phương pháp phổ biến bao gồm kiểm thử hộp đen (black-box), hộp trắng (white-box) và hộp xám (gray-box), như được nêu chi tiết trong các chương tiếp theo. Các triển khai cụ thể phụ thuộc vào yêu cầu của người kiểm thử, cho dù là đánh giá từ bên trong hay bên ngoài mạng doanh nghiệp, hoặc đánh giá bảo mật cho các mục tiêu như hệ điều hành và cơ sở dữ liệu. Các nhóm kiểm thử sử dụng các phương pháp có tính mục tiêu cao để phát hiện các lỗ hổng hệ thống, cuối cùng biên soạn danh sách lỗ hổng chi tiết và các chiến lược khắc phục trong các báo cáo. Điều này loại bỏ các lỗ hổng, giảm thiểu các mối đe dọa bảo mật tiềm ẩn và tăng cường khả năng phòng thủ của hệ thống [6]. Bài báo này giới thiệu toàn diện nội dung và vai trò của kiểm thử xâm nhập, phân tích và tóm tắt các phương pháp kiểm thử xâm nhập hiện có, thiết kế và tối ưu hóa quy trình kiểm thử xâm nhập hiện tại, cung cấp các tiêu chuẩn tham chiếu cho các nhóm kiểm thử để lựa chọn các công cụ kiểm thử hiệu quả, và cho phép chúng ta hiểu sâu sắc về kiểm thử xâm nhập thông qua các thực nghiệm tái hiện tấn công liên quan.
 
-\section{Prepare Your Paper Before Styling}
-Before you begin to format your paper, first write and save the content as a 
-separate text file. Complete all content and organizational editing before 
-formatting. Please note sections \ref{AA} to \ref{FAT} below for more information on 
-proofreading, spelling and grammar.
+Tóm lại, nghiên cứu kiểm thử xâm nhập hiện nay trên toàn thế giới thể hiện ba đặc điểm chính: trí tuệ, tính thực tiễn và tính tuân thủ. Ở trong nước, các động lực chính sách thúc đẩy đổi mới công nghệ. Trên quốc tế, trọng tâm nghiêng về hệ sinh thái mã nguồn mở và triển khai kiến trúc zero-trust.
 
-Keep your text and graphic files separate until after the text has been 
-formatted and styled. Do not number text heads---{\LaTeX} will do that 
-for you.
+Bài báo này thực hiện một nghiên cứu toàn diện về đánh giá an ninh và thực hành trong kiểm thử xâm nhập hệ thống. Đầu tiên, bài báo xem xét các phương pháp cốt lõi và các công cụ phổ biến của kiểm thử xâm nhập. Sau đó, một quy trình kiểm thử xâm nhập tiêu chuẩn được thiết kế và xác thực thông qua các thực nghiệm trên cả hệ thống máy chủ và ứng dụng web. Cuối cùng, dựa trên nhiều nghiên cứu tình huống thực tế, bài báo tóm tắt các hiểu biết sâu sắc về phòng thủ để đối phó với các cuộc tấn công mạng hiện đại.
 
-\subsection{Abbreviations and Acronyms}\label{AA}
-Define abbreviations and acronyms the first time they are used in the text, 
-even after they have been defined in the abstract. Abbreviations such as 
-IEEE, SI, MKS, CGS, ac, dc, and rms do not have to be defined. Do not use 
-abbreviations in the title or heads unless they are unavoidable.
-
-\subsection{Units}
+Các đóng góp chính của nghiên cứu này là:
 \begin{itemize}
-\item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
-\item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
-\item Do not mix complete spellings and abbreviations of units: ``Wb/m\textsuperscript{2}'' or ``webers per square meter'', not ``webers/m\textsuperscript{2}''. Spell out units when they appear in text: ``. . . a few henries'', not ``. . . a few H''.
-\item Use a zero before decimal points: ``0.25'', not ``.25''. Use ``cm\textsuperscript{3}'', not ``cc''.)
+\item \textbf{Tối ưu hóa và Tiêu chuẩn hóa Thiết kế Quy trình Kiểm thử Xâm nhập:} Dựa trên việc xem xét toàn diện các phương pháp hiện có, chúng tôi thiết kế và trình bày quy trình kiểm thử xâm nhập sáu giai đoạn, tối ưu hóa mọi giai đoạn từ thu thập thông tin đến kiểm thử lại báo cáo.
+\item \textbf{Xây dựng và Ứng dụng Mô hình Đánh giá Định lượng dựa trên Công cụ:} Chúng tôi đề xuất ba quy trình phân bổ trọng số cung cấp các tiêu chí tham chiếu khách quan cho việc lựa chọn và kết hợp công cụ trong các kịch bản kiểm thử khác nhau thông qua các tính toán trọng số.
+\item \textbf{Xác thực Thực nghiệm và Phân tích Kiểm thử Xâm nhập Đa chiều:} Chúng tôi tái hiện các cuộc tấn công xâm nhập máy chủ nhắm vào hệ thống Windows và Linux, cũng như các thực nghiệm xâm nhập web như SQL injection và tải tệp lên dựa trên DVWA.
+\item \textbf{Phân tích và Hiểu biết sâu sắc từ các Trường hợp An ninh Mạng Thực tế:} Chúng tôi phân tích các sự cố bảo mật lớn trong những năm gần đây để xác định các yếu tố chính góp phần vào các cuộc tấn công thành công và các lỗ hổng trong phòng thủ. Phân tích này cung cấp hướng dẫn trực tiếp để nâng cao mức độ bảo vệ an ninh trong các lĩnh vực liên quan.
 \end{itemize}
+
+Nghiên cứu này nhằm cung cấp hướng dẫn toàn diện cho các thực hành kiểm thử xâm nhập, từ các phương pháp lý thuyết đến lựa chọn công cụ và xác thực thực nghiệm, từ đó nâng cao khả năng phòng thủ chủ động của các hệ thống thông tin.
+
+\section{Kiến thức nền tảng}
+\subsection{Các mối đe dọa lớn đối với hệ thống mạng}
+\subsubsection{Tấn công Kỹ thuật Xã hội}
+Các cuộc tấn công kỹ thuật xã hội dựa trên việc khai thác các lỗ hổng của con người, bao gồm sự đồng cảm, sự tin tưởng, nỗi sợ hãi và lòng tham, thông qua thao túng tâm lý để xúi giục người dùng tiết lộ thông tin hoặc thực hiện các hành động độc hại [15]. Bản chất của chúng không nằm ở việc khai thác các lỗi kỹ thuật, mà ở việc nhắm vào tâm lý và hành vi của con người, thúc giục nạn nhân tự nguyện hợp tác với những kẻ tấn công. Tỷ lệ thành công của chúng đạt tới 90\%. Các hình thức điển hình bao gồm email lừa đảo (phishing), trang web giả mạo và lừa đảo qua điện thoại. Ví dụ, email lừa đảo có thể giả dạng là các thông báo "đáng tin cậy" từ ngân hàng, công ty hoặc bạn bè, lừa người dùng nhấp vào các liên kết độc hại trong tệp đính kèm hoặc nhập thông tin nhạy cảm như mật khẩu tài khoản [7]. Khi thành công, kẻ tấn công có thể thu được một lượng lớn thông tin cá nhân, ép buộc nạn nhân chuyển tiền hoặc trả tiền chuộc, mở đường cho các cuộc tấn công tiếp theo như mã hóa tống tiền (ransomware) và khai thác danh tính của nạn nhân để gian lận thêm. Do các cuộc tấn công này khai thác các lỗ hổng của con người, các biện pháp phòng thủ bao gồm tăng cường quy trình xác thực, duy trì sự cảnh giác cao độ, thường xuyên cập nhật hệ thống và mật khẩu, và cải thiện đào tạo an ninh cho nhân viên đối với các doanh nghiệp [11].
+
+\subsubsection{Giả mạo Danh tính}
+Giả mạo danh tính đề cập đến việc những kẻ tấn công sử dụng các phương tiện kỹ thuật để mạo danh người dùng hợp pháp nhằm vượt qua các cơ chế bảo mật, có được quyền truy cập trái phép hoặc thực hiện các cuộc tấn công độc hại. Nó thường được phân loại thành giả mạo IP và giả mạo người dùng. Giả mạo IP liên quan đến việc những kẻ tấn công sử dụng địa chỉ IP của người dùng hợp pháp hoặc địa chỉ IP không tồn tại làm IP nguồn cho các gói tin chúng gửi [22]. Điều này khai thác thực tế là các giao thức liên quan không xác minh IP nguồn của các gói tin để thực hiện các cuộc tấn công. Giả mạo người dùng có thể đạt được bằng cách tạo ra các hình ảnh khuôn mặt, mẫu giọng nói và các tài liệu nhận dạng như thẻ ID cực kỳ chân thực thông qua Mạng Đối kháng Tạo (GAN) và Các Mô hình Ngôn ngữ Lớn (LLM), từ đó cho phép tạo ra người dùng giả. Ngoài ra, các công cụ như trạm phát sóng giả hoặc Wi-Fi lừa đảo có thể được sử dụng để chặn mã xác minh SMS. Sau đó, chúng được kết hợp với các tập lệnh tự động để thực hiện các giao dịch gian lận, chiếm đoạt tài khoản và các hoạt động khác. Các cuộc tấn công như vậy đã phát triển thành một chuỗi công nghiệp hoàn chỉnh trải dài từ phát triển công cụ đến buôn bán dữ liệu. Để chống lại các cuộc tấn công giả mạo này, các kỹ thuật phát hiện sự sống động (liveness detection) như chớp mắt và há miệng thường được sử dụng để xác minh danh tính. Ngoài ra, phân tích thời gian thực các mẫu chuyển động của chuột được sử dụng để phân biệt giữa người dùng AI và người dùng thực bằng cách theo dõi các quỹ đạo hoạt động của họ [29].
+
+\subsubsection{Mã độc}
+Mã độc đề cập đến các bộ lệnh do những kẻ tấn công dàn dựng để giám sát, chiếm quyền điều khiển hoặc phá hoại các hệ thống hoặc chương trình [23]. Trọng tâm chính của nó là sự che giấu để trốn tránh các cơ chế phát hiện an ninh, trong khi khả năng tấn công là thứ yếu. Nó chủ yếu được phân loại thành các loại độc lập và tự sao chép. Loại trước sở hữu đầy đủ chức năng của chương trình và có thể thực thi và lan truyền độc lập mà không cần vật chủ, trong khi loại sau thường bao gồm các đoạn mã yêu cầu một vật chủ để lan truyền và chạy. Các danh mục cụ thể được hiển thị trong Bảng \ref{tab1}, thông tin chi tiết trong Bảng \ref{tab2}.
 
 \subsection{Equations}
-Number equations consecutively. To make your 
-equations more compact, you may use the solidus (~/~), the exp function, or 
-appropriate exponents. Italicize Roman symbols for quantities and variables, 
-but not Greek symbols. Use a long dash rather than a hyphen for a minus 
-sign. Punctuate equations with commas or periods when they are part of a 
-sentence, as in:
-\begin{equation}
-a+b=\gamma\label{eq}
-\end{equation}
-
-Be sure that the 
-symbols in your equation have been defined before or immediately following 
-the equation. Use ``\eqref{eq}'', not ``Eq.~\eqref{eq}'' or ``equation \eqref{eq}'', except at 
-the beginning of a sentence: ``Equation \eqref{eq} is . . .''
-
-\subsection{\LaTeX-Specific Advice}
-
-Please use ``soft'' (e.g., \verb|\eqref{Eq}|) cross references instead
-of ``hard'' references (e.g., \verb|(1)|). That will make it possible
-to combine sections, add equations, or change the order of figures or
-citations without having to go through the file line by line.
-
-Please don't use the \verb|{eqnarray}| equation environment. Use
-\verb|{align}| or \verb|{IEEEeqnarray}| instead. The \verb|{eqnarray}|
-environment leaves unsightly spaces around relation symbols.
-
-Please note that the \verb|{subequations}| environment in {\LaTeX}
-will increment the main equation counter even when there are no
-equation numbers displayed. If you forget that, you might write an
-article in which the equation numbers skip from (17) to (20), causing
-the copy editors to wonder if you've discovered a new method of
-counting.
-
-{\BibTeX} does not work by magic. It doesn't get the bibliographic
-data from thin air but from .bib files. If you use {\BibTeX} to produce a
-bibliography you must send the .bib files. 
-
-{\LaTeX} can't read your mind. If you assign the same label to a
-subsubsection and a table, you might find that Table I has been cross
-referenced as Table IV-B3. 
-
-{\LaTeX} does not have precognitive abilities. If you put a
-\verb|\label| command before the command that updates the counter it's
-supposed to be using, the label will pick up the last counter to be
-cross referenced instead. In particular, a \verb|\label| command
-should not go before the caption of a figure or a table.
-
-Do not use \verb|\nonumber| inside the \verb|{array}| environment. It
-will not stop equation numbers inside \verb|{array}| (there won't be
-any anyway) and it might stop a wanted equation number in the
-surrounding equation.
-
-\subsection{Some Common Mistakes}\label{SCM}
-\begin{itemize}
-\item The word ``data'' is plural, not singular.
-\item The subscript for the permeability of vacuum $\mu_{0}$, and other common scientific constants, is zero with subscript formatting, not a lowercase letter ``o''.
-\item In American English, commas, semicolons, periods, question and exclamation marks are located within quotation marks only when a complete thought or name is cited, such as a title or full quotation. When quotation marks are used, instead of a bold or italic typeface, to highlight a word or phrase, punctuation should appear outside of the quotation marks. A parenthetical phrase or statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within the parentheses.)
-\item A graph within a graph is an ``inset'', not an ``insert''. The word alternatively is preferred to the word ``alternately'' (unless you really mean something that alternates).
-\item Do not use the word ``essentially'' to mean ``approximately'' or ``effectively''.
-\item In your paper title, if the words ``that uses'' can accurately replace the word ``using'', capitalize the ``u''; if not, keep using lower-cased.
-\item Be aware of the different meanings of the homophones ``affect'' and ``effect'', ``complement'' and ``compliment'', ``discreet'' and ``discrete'', ``principal'' and ``principle''.
-\item Do not confuse ``imply'' and ``infer''.
-\item The prefix ``non'' is not a word; it should be joined to the word it modifies, usually without a hyphen.
-\item There is no period after the ``et'' in the Latin abbreviation ``et al.''.
-\item The abbreviation ``i.e.'' means ``that is'', and the abbreviation ``e.g.'' means ``for example''.
-\end{itemize}
-An excellent style manual for science writers is \cite{b7}.
-
-\subsection{Authors and Affiliations}\label{AAA}
-\textbf{The class file is designed for, but not limited to, six authors.} A 
-minimum of one author is required for all conference articles. Author names 
-should be listed starting from left to right and then moving down to the 
-next line. This is the author sequence that will be used in future citations 
-and by indexing services. Names should not be listed in columns nor group by 
-affiliation. Please keep your affiliations as succinct as possible (for 
-example, do not differentiate among departments of the same organization).
-
-\subsection{Identify the Headings}\label{ITH}
-Headings, or heads, are organizational devices that guide the reader through 
-your paper. There are two types: component heads and text heads.
-
-Component heads identify the different components of your paper and are not 
-topically subordinate to each other. Examples include Acknowledgments and 
-References and, for these, the correct style to use is ``Heading 5''. Use 
-``figure caption'' for your Figure captions, and ``table head'' for your 
-table title. Run-in heads, such as ``Abstract'', will require you to apply a 
-style (in this case, italic) in addition to the style provided by the drop 
-down menu to differentiate the head from the text.
-
-Text heads organize the topics on a relational, hierarchical basis. For 
-example, the paper title is the primary text head because all subsequent 
-material relates and elaborates on this one topic. If there are two or more 
-sub-topics, the next level head (uppercase Roman numerals) should be used 
-and, conversely, if there are not at least two sub-topics, then no subheads 
-should be introduced.
-
-\subsection{Figures and Tables}\label{FAT}
-\paragraph{Positioning Figures and Tables} Place figures and tables at the top and 
-bottom of columns. Avoid placing them in the middle of columns. Large 
-figures and tables may span across both columns. Figure captions should be 
-below the figures; table heads should appear above the tables. Insert 
-figures and tables after they are cited in the text. Use the abbreviation 
-``Fig.~\ref{fig}'', even at the beginning of a sentence.
-
 \begin{table}[htbp]
-\caption{Table Type Styles}
+\caption{Các danh mục cụ thể của mã độc}
 \begin{center}
-\begin{tabular}{|c|c|c|c|}
+\begin{tabular}{|l|c|}
 \hline
-\textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
-\cline{2-4} 
-\textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
+\textbf{Phân loại} & \textbf{Các trường hợp liên quan} \\
 \hline
-copy& More table copy$^{\mathrm{a}}$& &  \\
+Mã độc không độc lập tự sao chép & Virus \\
+Mã độc không độc lập không tự sao chép & Backdoor \\
+Mã độc độc lập tự sao chép & Sâu máy tính (Worm) \\
+Mã độc độc lập không tự sao chép & Trojan \\
 \hline
-\multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
 \end{tabular}
 \label{tab1}
 \end{center}
 \end{table}
 
-\begin{figure}[htbp]
-\centerline{\includegraphics{fig1.png}}
-\caption{Example of a figure caption.}
-\label{fig}
-\end{figure}
+\begin{table*}[htbp]
+\caption{Thông tin chi tiết về Worm, Virus và Trojan}
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Chi tiết} & \textbf{Worm} & \textbf{Virus} & \textbf{Trojan} \\
+\hline
+Hình thức tồn tại & Tệp độc lập & Ký sinh & Tệp độc lập \\
+Phương thức lây nhiễm & Qua lỗ hổng hệ thống & Cấy vào chương trình chủ & Cấy vào máy mục tiêu \\
+Tốc độ lây nhiễm & Tương đối nhanh & Chậm & Chậm nhất \\
+Mục tiêu lây nhiễm & Các chương trình lỗ hổng & Các tệp cục bộ & Máy chủ mạng, tệp tệp \\
+Điều kiện kích hoạt & Tự động tấn công & Điều kiện do tác giả định nghĩa & Tự động khởi chạy \\
+Phương pháp phòng ngừa & Áp dụng các bản vá bảo mật & Loại bỏ khỏi tệp chủ & Loại bỏ mục khởi động \\
+Đối thủ & Nhà cung cấp, người dùng & Người dùng, phần mềm diệt virus & Quản trị viên, phần mềm diệt virus \\
+\hline
+\end{tabular}
+\label{tab2}
+\end{center}
+\end{table*}
 
-Figure Labels: Use 8 point Times New Roman for Figure labels. Use words 
-rather than symbols or abbreviations when writing Figure axis labels to 
-avoid confusing the reader. As an example, write the quantity 
-``Magnetization'', or ``Magnetization, M'', not just ``M''. If including 
-units in the label, present them within parentheses. Do not label axes only 
-with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization 
-\{A[m(1)]\}'', not just ``A/m''. Do not label axes with a ratio of 
-quantities and units. For example, write ``Temperature (K)'', not 
-``Temperature/K''.
+\subsubsection{Xâm nhập từ xa}
+Xâm nhập từ xa đề cập đến việc những kẻ tấn công khai thác các phương tiện kỹ thuật qua mạng để thực hiện các hành động trái phép như truy cập từ xa, điều khiển hoặc phá hoại các hệ thống mục tiêu [25]. Cuộc tấn công này có thể được phân loại rộng rãi thành hai loại: truy cập trái phép và truy cập bất hợp pháp. Truy cập trái phép liên quan đến việc những kẻ tấn công sử dụng các phương pháp kỹ thuật kết hợp với các công cụ hack khác nhau để vượt qua các cơ chế bảo mật, chẳng hạn như xác thực danh tính, và giành được quyền truy cập bất hợp pháp vào các hệ thống mục tiêu. Truy cập bất hợp pháp đề cập đến việc những kẻ tấn công thiết lập các kết nối trái phép với các hệ thống nội bộ thông qua các kênh bất hợp pháp để đạt được quyền truy cập vào các tài nguyên hệ thống.
 
-\section*{Acknowledgment}
+\subsubsection{Tấn công Từ chối Dịch vụ Phân tán (DDoS)}
+Tấn công Từ chối Dịch vụ Phân tán (DDoS) tận dụng nhiều thiết bị để tiêu thụ lượng lớn tài nguyên hệ thống mục tiêu thông qua các phương pháp tấn công cụ thể, gây ra tình trạng tê liệt máy chủ và khiến nó không thể cung cấp các dịch vụ bình thường [14]. Những kẻ tấn công khai thác các lỗ hổng bảo mật cố hữu trong các giao thức để gửi một lượng lớn các gói dữ liệu rác được thiết kế cẩn thận, trông có vẻ hợp pháp đến các máy chủ mục tiêu. Các gói tin này vượt qua thành công sự phát hiện của tường lửa, cuối cùng làm cạn kiệt tài nguyên của hệ thống mục tiêu và chấm dứt các dịch vụ của nó. Rõ ràng, việc phòng thủ chống lại các cuộc tấn công như vậy đặt ra những thách thức đáng kể.
 
-The preferred spelling of the word ``acknowledgment'' in America is without 
-an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
-G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
-acknowledgments in the unnumbered footnote on the first page.
+\subsubsection{Trộm cắp và Giả mạo Thông tin}
+Trong lĩnh vực an ninh thông tin, trộm cắp và giả mạo thông tin là những phương thức tấn công điển hình [21]. Dựa trên đặc điểm của chúng, các cuộc tấn công này có thể được phân loại thành tấn công thụ động và chủ động. Các hình thức phổ biến của tấn công thụ động bao gồm nghe trộm phiên (session eavesdropping), phân tích lưu lượng và tấn công xen giữa (man-in-the-middle), chủ yếu được sử dụng để lấy quyền riêng tư của người dùng, bí mật thương mại hoặc thông tin xác thực hệ thống. Vì các cuộc tấn công này thường chỉ liên quan đến việc chặn nội dung truyền thông mà không sửa đổi dữ liệu, nên chúng có tính che giấu cao và khó phát hiện. Ngược lại, các cuộc tấn công chủ động thường sử dụng các kỹ thuật như gói tin giả mạo, phát lại phiên (session replay) và giả mạo độc hại để giành quyền truy cập trái phép vào các hệ thống [27]. Do đó, phòng thủ chống lại các tấn công thụ động tập trung vào ngăn ngừa hơn là phát hiện, dựa vào mã hóa và kiểm soát truy cập để bảo vệ thông tin. Tuy nhiên, các tấn công chủ động yêu cầu sự kết hợp của phát hiện xâm nhập và chữ ký số để phòng thủ động.
 
-\section*{References}
+\subsection{Các phương pháp kiểm thử xâm nhập chính}
+Dựa trên mục tiêu kiểm thử và cách thức triển khai, các phương pháp kiểm thử xâm nhập chủ đạo có thể được phân loại thành kiểm thử hộp đen, kiểm thử hộp trắng và kiểm thử hộp xám, hình thành các khung tiêu chuẩn hóa như OSSTMM và PTES [1].
 
-Please number citations consecutively within brackets \cite{b1}. The 
-sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
-number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
-the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+\textbf{(1) Kiểm thử Hộp đen (Black-Box Testing):} Phương pháp này nhấn mạnh tính thực tế, trong đó người kiểm thử hoạt động hoàn toàn từ quan điểm của một kẻ tấn công bên ngoài với kiến thức tối thiểu về mục tiêu. Họ chỉ dựa vào thông tin công khai về hệ thống. Ưu điểm nằm ở sự phù hợp chặt chẽ với các kịch bản tấn công thực tế, trong khi nhược điểm là sự đầu tư thời gian đáng kể và khả năng bỏ lỡ các lỗ hổng cao hơn.
 
-Number footnotes separately in superscripts. Place the actual footnote at 
-the bottom of the column in which it was cited. Do not put footnotes in the 
-abstract or reference list. Use letters for table footnotes.
+\textbf{(2) Kiểm thử Hộp trắng (White-Box Testing):} Được thực hiện từ bên trong hệ thống mục tiêu, phương pháp này phản ánh quan điểm của người phát triển hệ thống [17]. Kiểm thử diễn ra sau khi có được kiến thức toàn diện về hệ thống, chẳng hạn như thông tin nhân viên và dữ liệu bảo mật. Phương pháp này nhanh hơn và cung cấp khả năng phát hiện lỗ hổng triệt để hơn, hầu như loại bỏ rủi ro bỏ lỡ lỗ hổng. Tuy nhiên, nó phát sinh chi phí cao hơn.
 
-Unless there are six authors or more give all authors' names; do not use 
-``et al.''. Papers that have not been published, even if they have been 
-submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
-that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
-Capitalize only the first word in a paper title, except for proper nouns and 
-element symbols.
+\textbf{(3) Kiểm thử Hộp xám (Gray-Box Testing):} Kết hợp các tính năng của hai phương pháp trước, phương pháp này liên quan đến việc người kiểm thử hoạt động với thông tin đăng nhập của người dùng với quyền truy cập dữ liệu một phần, cho phép họ có được thông tin hạn chế về cơ sở hạ tầng mạng. Phương pháp này hiệu quả và tiết kiệm chi phí hơn kiểm thử hộp đen trong khi tránh được chi phí cao của kiểm thử hộp trắng.
 
-For papers published in translation journals, please give the English 
-citation first, followed by the original foreign-language citation \cite{b6}.
+Hiện nay, theo khung phân loại này, kiểm thử xâm nhập được chia nhỏ hơn nữa thành kiểm thử xâm nhập truyền thống và kiểm thử xâm nhập tự động.
+
+\subsection{Tiến trình nghiên cứu hiện tại và thách thức}
+Khi các công nghệ như LLM và học sâu phát triển, chúng đã được chứng minh là tăng cường nhận dạng lỗ hổng tự trị và độ chính xác của việc tạo lộ trình tấn công tự động [33]. Việc tiêu chuẩn hóa các quy trình kiểm thử xâm nhập và tích hợp các công cụ kiểm thử chính yếu đã dần trở thành sự đồng thuận trong ngành. Ví dụ, việc áp dụng rộng rãi khung PTES gián tiếp thúc đẩy sự tiêu chuẩn hóa trong các giai đoạn kiểm thử như thu thập thông tin, khai thác lỗ hổng và sau khai thác.
+
+Dù có những tiến bộ này, kiểm thử xâm nhập vẫn đối mặt với nhiều thách thức: (1) Các công cụ quét lỗ hổng hiện tại phụ thuộc nhiều vào cơ sở dữ liệu lỗ hổng đã biết (như CVE), hạn chế khả năng phát hiện các lỗ hổng zero-day. (2) Sự phát triển liên tục của các công nghệ IoT và 5G dẫn đến môi trường kiểm thử ngày càng đa dạng và phức tạp. (3) Thiếu các giải pháp kiểm thử hoàn thiện cho các vectơ tấn công mới như lỗ hổng hợp đồng thông minh blockchain.
+
+\section{Thiết kế quy trình kiểm thử xâm nhập}
+\subsection{Thiết kế quy trình tổng thể}
+Dựa trên các yêu cầu cụ thể đối với kiểm thử xâm nhập mạng được nêu trong Tiêu chuẩn Bảo vệ Cấp độ 2.0 và các khung quy trình kiểm thử xâm nhập hiện có, quy trình kiểm thử xâm nhập cơ bản có thể được thiết kế thành sáu giai đoạn sau: (1) Giai đoạn chuẩn bị, (2) Thu thập thông tin, (3) Phát hiện lỗ hổng và Kiểm thử xâm nhập, (4) Kiểm thử sau xâm nhập, (5) Tạo báo cáo, và (6) Kiểm thử lại và Kết thúc.
+\cite{b7}.
+
+\subsection{Mô tả chi tiết các giai đoạn}
+\subsubsection{Chuẩn bị và Thu thập thông tin}
+Sau khi nhận được sự cho phép liên quan từ khách hàng, nhóm kiểm thử phải thảo luận kỹ lưỡng các chi tiết kiểm thử với khách hàng để xác định mục tiêu, các ràng buộc và phạm vi kiểm thử. Điều này đảm bảo đạt được kết quả mong muốn của khách hàng và cho phép xây dựng một kế hoạch kiểm thử cụ thể. Ngoài ra, vì kiểm thử xâm nhập có thể gây ra một số thiệt hại cho hệ thống mục tiêu và liên quan đến các rủi ro tiềm ẩn, khách hàng phải được thông báo về những khả năng đó. Nhóm nên hỗ trợ khách hàng sao lưu dữ liệu quan trọng. Tóm lại, khách hàng phải nhận thức đầy đủ về tất cả các chi tiết liên quan đến quy trình kiểm thử xâm nhập.
+
+Mục tiêu chính của thu thập thông tin là có được càng nhiều thông tin hữu ích càng tốt, bao gồm kiến trúc và chức năng hệ thống, các biện pháp bảo mật, người dùng và quyền hạn, cấu trúc mạng, các cổng mở, phần mềm của bên thứ ba và các dịch vụ. Giai đoạn này có thể kết hợp các cuộc tấn công kỹ thuật xã hội để đánh giá nhận thức bảo mật của nhân viên doanh nghiệp và sự cảnh giác của nhân viên nội bộ đối với việc rò rỉ thông tin nhạy cảm. Hiện nay, việc thu thập thông tin chủ yếu sử dụng các phương pháp sau: kỹ thuật xã hội, thu thập thông tin công khai, quét mạng và các phương pháp khác.
+
+\subsubsection{Phát hiện lỗ hổng và Kiểm thử xâm nhập}
+Quét lỗ hổng là quá trình sử dụng các công cụ như Nessus để xác định các lỗ hổng hệ thống và các điểm yếu khác. Tiếp theo, nhóm kiểm thử sử dụng kiến thức chuyên môn để đánh giá các lỗ hổng này và xác định các điểm yếu thực sự trong hệ thống. Sau đó, họ thực hiện các cuộc tấn công hacker mô phỏng thực tế nhằm vào các lỗ hổng đã xác định để đánh giá khả năng phòng thủ của hệ thống và khả năng phục hồi sau tấn công [19]. Do đó, kiểm thử xâm nhập xác định các điểm yếu của hệ thống và các khu vực cần cải thiện, nâng cao khả năng phòng thủ và khả năng phục hồi sau các cuộc tấn công của hacker. Ngoài ra, nó nâng cao nhận thức về bảo mật của nhân viên tại tổ chức được kiểm thử và rèn luyện các kỹ năng kỹ thuật của nhân viên kiểm thử. Nó có thể được phân loại rộng rãi thành ba loại: Kiểm thử xâm nhập mạng, Kiểm thử xâm nhập ứng dụng và Kiểm thử xâm nhập vật lý.
+
+\subsubsection{Kiểm thử sau xâm nhập}
+Kiểm thử sau xâm nhập xảy ra sau khi giành được quyền truy cập hệ thống hoặc quyền quản trị viên miền. Dựa trên đặc điểm kinh doanh của tổ chức mục tiêu, nhóm kiểm thử lập bản đồ và xác định các thông tin quan trọng và tài sản kỹ thuật số của tổ chức, phát hiện các vectơ tấn công có khả năng gây ra thiệt hại và tác động đáng kể. Sau khi đạt được các mục tiêu như có được các quyền liên quan và thông tin quan trọng hoặc xâm nhập hệ thống mục tiêu, nhóm kiểm thử phải dọn dẹp chiến trường bằng cách loại bỏ các dấu vết xâm nhập, chẳng hạn như xóa phần mềm độc hại đã tải lên và xóa nhật ký hệ thống.
+
+Kiểm thử sau xâm nhập yêu cầu cả leo thang đặc quyền và duy trì đặc quyền, làm cho việc kiểm soát đặc quyền trở thành bản chất của kiểm thử xâm nhập. Từ các góc độ phòng thủ quyền lợi và leo thang đặc quyền, có những sự khác biệt rõ rệt giữa hệ thống Windows và Linux. Trên Windows, duy trì đặc quyền thường bao gồm các phương pháp như tự động khởi chạy dịch vụ, chiếm đoạt COM và backdoor WMI. Trên Linux, các kỹ thuật duy trì bao gồm liên kết tượng trưng (symbolic links), backdoor và truy cập khóa công khai/riêng tư SSH không cần mật khẩu.
+
+\subsubsection{Báo cáo và Kết thúc}
+Giai đoạn này yêu cầu chuẩn bị các báo cáo kiểm thử chi tiết ghi lại trung thực các phương pháp tấn công được sử dụng trong mỗi giai đoạn kiểm thử, các công cụ liên quan được sử dụng, và thiệt hại cũng như tác động của các cuộc tấn công này đối với hệ thống. Nó nên giải thích các chi tiết cụ thể về việc phát hiện lỗ hổng, phác thảo các phương pháp đánh giá, chỉ rõ các rủi ro liên quan và cung cấp các khuyến nghị khắc phục có mục tiêu để hỗ trợ bên được kiểm thử trong việc loại bỏ các lỗ hổng bảo mật và nâng cao khả năng bảo vệ của họ.
+
+\section{Đánh giá công cụ và xác thực thực nghiệm}
+\subsection{Các công cụ kiểm thử chủ đạo}
+\subsubsection{Nền tảng tích hợp và công cụ quét}
+\textbf{(1) Kali Linux:} Được phát hành vào năm 2013 như một bản phân phối Linux dựa trên Debian được phát triển và duy trì bởi nhóm Offensive Security [10]. Kali Linux chuyên về an ninh mạng, phục vụ chủ yếu cho việc kiểm thử xâm nhập và kiểm toán an ninh. Nó tích hợp hơn 600 công cụ kiểm thử xâm nhập, hoạt động như một bộ công cụ và kho vũ khí cho các nhà nghiên cứu bảo mật.
+
+\textbf{(2) Nmap:} Network Mapper (Nmap) là một công cụ kiểm tra và phát hiện mạng mã nguồn mở được Gordon Lyon phát hành lần đầu vào năm 1997. Trong kiểm thử xâm nhập, nó thường được sử dụng trong giai đoạn thu thập thông tin để xác định các máy chủ trực tuyến, các cổng mở và các dịch vụ liên quan.
+
+\textbf{(3) Masscan:} Được phát triển để vượt qua các nút thắt cổ chai về hiệu suất trong các công cụ quét truyền thống, Masscan thực hiện các cuộc quét toàn mạng một cách nhanh chóng. Nó tận dụng việc truyền gói tin song song của CPU đa nhân, đạt đến đỉnh cao lý thuyết là 10 triệu gói mỗi giây.
+
+\textbf{(4) Shodan:} Shodan là một công cụ tìm kiếm được sử dụng chủ yếu để tìm các thiết bị kết nối mạng internet. Nó liên tục quét các địa chỉ IPv4/IPv6 toàn cầu, lập chỉ mục thông tin biểu ngữ từ các thiết bị IoT, máy chủ, hệ thống công nghiệp bị lộ.
+
+\subsubsection{Công cụ quản lý và khai thác lỗ hổng}
+\textbf{(1) Nessus:} Nessus là một công cụ quản lý lỗ hổng tiêu chuẩn được phát triển bởi Tenable Network Security, chuyên xác định toàn diện các rủi ro bảo mật trên các tài sản mạng. Nó tích hợp hơn 20.000 lỗ hổng, bao gồm các lỗi CVE, lỗi cấu hình, mật khẩu yếu và các bản vá còn thiếu.
+
+\textbf{(2) OpenVAS:} OpenVAS là một khung quản lý và quét lỗ hổng mã nguồn mở phát triển từ mã nguồn Nessus ban đầu. Nó tập trung vào việc cung cấp khả năng phát hiện lỗ hổng cấp doanh nghiệp và chủ yếu được duy trì bởi Greenbone Networks.
+
+\textbf{(3) Metasploit:} Metasploit là một khung kiểm thử xâm nhập mã nguồn mở, ban đầu được phát hành bởi H.D. Moore vào năm 2003. Mục đích chính của nó là tiêu chuẩn hóa quy trình khai thác thông qua thiết kế mô-đun, bao quát toàn bộ chuỗi tấn công từ phát hiện lỗ hổng đến khai thác và leo thang đặc quyền.
+
+\subsubsection{Công cụ kiểm thử ứng dụng web}
+\textbf{(1) Burp Suite:} Burp Suite là một nền tảng toàn diện được phát triển bởi PortSwigger chủ yếu để kiểm thử xâm nhập web, với chức năng cốt lõi là proxy đánh chặn. Các tính năng của nó bao gồm đánh chặn thời gian thực và sửa đổi các yêu cầu và phản hồi HTTP.
+
+\textbf{(2) SQLMap:} SQLMap là một công cụ kiểm thử xâm nhập mã nguồn mở chuyên về phát hiện và khai thác SQL injection tự động. Nó tập trung vào một công cụ phân tích tham số và khai thác thông minh cao, được sử dụng rộng rãi trong kiểm thử bảo mật cơ sở dữ liệu.
+
+\subsection{Mô hình đánh giá hiệu quả công cụ dựa trên kịch bản}
+Trong kiểm thử xâm nhập thực tế, các công cụ được sử dụng thay đổi tùy theo mục tiêu kiểm thử và hoàn cảnh cụ thể. Bài báo này đề xuất các kịch bản phân bổ trọng số phù hợp cho ba tình huống khác nhau:
+- \textbf{Kịch bản 1 (Cân bằng):} Phù hợp cho kiểm thử xâm nhập định kỳ, cân bằng giữa phát hiện lỗ hổng, khai thác và quét cơ bản.
+- \textbf{Kịch bản 2 (Đánh giá nội bộ doanh nghiệp):} Ưu tiên xác định các lỗ hổng mạng nội bộ và các ứng dụng web nội bộ.
+- \textbf{Kịch bản 3 (Thực chiến):} Tập trung vào việc khai thác lỗ hổng để giành quyền kiểm soát hệ thống và tính ẩn bản.
+
+Mô hình tính toán tổng trọng số cho mỗi công cụ giúp hỗ trợ người kiểm thử trong việc chọn ra bộ công cụ hiệu quả nhất cho từng kịch bản cụ thể.
+
+\subsection{Thực nghiệm kiểm thử xâm nhập máy chủ}
+Thực nghiệm này sử dụng VMware Workstation để triển khai các máy chủ thử nghiệm chạy các hệ điều hành khác nhau (Windows 7, Windows Server 2012 R2, Metasploitable 2 Linux). 
+- \textbf{Tấn công hệ thống Windows:} Cuộc tấn công nhắm vào lỗ hổng CVE-2019-0708 (BlueKeep) và MS17-010 (EternalBlue) trên Windows 7. Kết quả cho thấy kẻ tấn công có thể giành quyền kiểm soát toàn bộ hệ thống hoặc gây ra lỗi màn hình xanh.
+- \textbf{Tấn công hệ thống Linux:} Khai thác các lỗ hổng như "VNC Server password", "Samba Badlock" và "Apache Tomcat AJP Connector" để giành quyền truy cập và thực thi lệnh từ xa.
+
+\subsection{Thực nghiệm kiểm thử xâm nhập ứng dụng web}
+- \textbf{Lỗ hổng tải tệp lên (File Upload):} Sử dụng DVWA ở mức độ bảo mật trung bình, thực nghiệm trình bày cách vượt qua các kiểm tra loại tệp bằng cách sửa đổi tiêu đề HTTP Content-Type thông qua Burp Suite để tải lên một web shell độc hại.
+- \textbf{Tấn công SQL Injection:} Tái hiện cách thức kẻ tấn công sử dụng các lệnh SQL để trích xuất cấu trúc cơ sở dữ liệu và thông tin người dùng nhạy cảm từ các trường nhập liệu không được bộ lọc tốt.
+- \textbf{Tấn công XSS:} Trình bày ba loại XSS chính: Phản xạ (Reflected), Lưu trữ (Stored) và dựa trên DOM, minh họa cách thực thi mã JavaScript độc hại trên trình duyệt của người dùng.
+
+\section{Nghiên cứu tình huống và bài học}
+\subsection{Sự cố tấn công mạng Olympic Paris 2024}
+Trong Thế vận hội Paris 2024, hơn 140 cuộc tấn công mạng đã được báo cáo, chủ yếu nhắm vào các tổ chức liên quan đến sự kiện. Các hình thức tấn công bao gồm DDoS, xâm nhập hệ thống và trộm cắp dữ liệu. Bài học rút ra là tầm quan trọng của việc diễn tập tấn công-phòng thủ toàn diện và giám sát mạng thời gian thực.
+
+\subsection{Sự cố rò rỉ dữ liệu của AT\&T}
+Vào tháng 7 năm 2024, dữ liệu của khoảng 110 triệu khách hàng AT\&T đã bị xâm phạm do cấu hình sai giao diện API của nhà cung cấp dịch vụ đám mây bên thứ ba. Sự cố này nhấn mạnh sự cần thiết của việc tuân thủ các nguyên tắc Zero-Trust khi làm việc với bên thứ ba và tăng cường giám sát các hoạt động xuất dữ liệu bất thường.
+
+\subsection{Sự cố khai thác Zero-Day Ivanti VPN}
+Việc phát hiện các lỗ hổng zero-day trong Ivanti Connect Secure VPN vào đầu năm 2024 đã gây ra thiệt hại lớn cho nhiều cơ quan chính phủ và tổ chức tài chính. Khoảng thời gian phát hành bản vá kéo dài đã cho phép kẻ tấn công thiết lập các kênh truy cập bền vững. Điều này cho thấy cần phải có tâm thế "Luôn giả định bị xâm nhập" (Assume Breach) trong các khung bảo mật.
+
+\section{Kết luận và Công việc tương lai}
+Bài báo này đã cung cấp cái nhìn toàn diện về các thách thức và phương pháp luận hiện có trong kiểm thử xâm nhập. Qua việc thiết kế một quy trình kiểm thử sáu giai đoạn và xác thực thông qua các thực nghiệm thực tế, nghiên cứu đã chứng minh hiệu quả của việc kết hợp các công cụ chuyên dụng để nâng cao khả năng phòng thủ hệ thống.
+
+Trong tương lai, nghiên cứu có thể tập trung vào việc tích hợp học máy và học sâu để phát triển các công cụ kiểm thử xâm nhập tự động thông minh hơn, cũng như mở rộng phạm vi kiểm thử sang các nền tảng điện toán đám mây và IoT phức tạp hơn.
 
 \begin{thebibliography}{00}
 \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
 \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
 \bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
 \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-\bibitem{b8} D. P. Kingma and M. Welling, ``Auto-encoding variational Bayes,'' 2013, arXiv:1312.6114. [Online]. Available: https://arxiv.org/abs/1312.6114
-\bibitem{b9} S. Liu, ``Wi-Fi Energy Detection Testbed (12MTC),'' 2023, gitHub repository. [Online]. Available: https://github.com/liustone99/Wi-Fi-Energy-Detection-Testbed-12MTC
-\bibitem{b10} ``Treatment episode data set: discharges (TEDS-D): concatenated, 2006 to 2009.'' U.S. Department of Health and Human Services, Substance Abuse and Mental Health Services Administration, Office of Applied Studies, August, 2013, DOI:10.3886/ICPSR30122.v2
-\bibitem{b11} K. Eves and J. Valasek, ``Adaptive control for singularly perturbed systems examples,'' Code Ocean, Aug. 2023. [Online]. Available: https://codeocean.com/capsule/4989235/tree
+\bibitem{b10} ``Treatment episode data set: discharges (TEDS-D): concatenated, 2006 to 2009.'' U.S. HHSA, 2013.
+\bibitem{b11} K. Eves and J. Valasek, ``Adaptive control for singularly perturbed systems examples,'' Code Ocean, Aug. 2023.
+\bibitem{b12} Arxiv:2510.26555v1 [cs.CR] 30 Oct 2025. ``A Comprehensive Evaluation and Practice of System Penetration Testing''.
 \end{thebibliography}
-
-\vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
 
 \end{document}
