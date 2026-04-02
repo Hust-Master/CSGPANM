@@ -2,23 +2,10 @@
     "latex-workshop.latex.tools": [
         {
             "name": "docker-pdflatex",
-            "command": "docker",
+            "command": "powershell",
             "args": [
-                "run",
-                "--rm",
-                "-v",
-                "miktex-data:/var/lib/miktex",
-                "-v",
-                "miktex-cache:/miktex/.miktex",
-                "-v",
-                "${workspaceFolder}:/workdir",
-                "-w",
-                "/workdir",
-                "miktex/miktex:essential",
-                "pdflatex",
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "IEEE-conference-template-062824.tex"
+                "-ExecutionPolicy", "Bypass",
+                "-File", "%WORKSPACE_FOLDER%/build_with_docker.ps1"
             ],
             "env": {}
         }
@@ -32,5 +19,8 @@
         }
     ],
     "latex-workshop.latex.autoBuild.run": "onSave",
-    "latex-workshop.view.pdf.viewer": "tab"
+    "latex-workshop.view.pdf.viewer": "tab",
+    "[latex]": {
+        "editor.formatOnSave": false
+    }
 }
