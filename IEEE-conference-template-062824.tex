@@ -174,6 +174,47 @@ Kiểm thử sau xâm nhập yêu cầu cả leo thang đặc quyền và duy tr
 \subsubsection{Báo cáo và Kết thúc}
 Giai đoạn này yêu cầu chuẩn bị các báo cáo kiểm thử chi tiết ghi lại trung thực các phương pháp tấn công được sử dụng trong mỗi giai đoạn kiểm thử, các công cụ liên quan được sử dụng, và thiệt hại cũng như tác động của các cuộc tấn công này đối với hệ thống. Nó nên giải thích các chi tiết cụ thể về việc phát hiện lỗ hổng, phác thảo các phương pháp đánh giá, chỉ rõ các rủi ro liên quan và cung cấp các khuyến nghị khắc phục có mục tiêu để hỗ trợ bên được kiểm thử trong việc loại bỏ các lỗ hổng bảo mật và nâng cao khả năng bảo vệ của họ.
 
+\section{Giải pháp kiểm thử xâm nhập tự động AutoScanCVE}
+\subsection{Cách tiếp cận và Quy trình hoạt động}
+AutoScanCVE được đề xuất là một công cụ tự động hoá quy trình dò quét và phát hiện lỗ hổng bảo mật dựa trên CVE mapping. Quy trình hoạt động của hệ thống bao gồm các bước sau:
+\begin{enumerate}
+    \sloppy
+    \item \textbf{Reconnaissance}: Người dùng nhập mục tiêu (IP/\-Domain). Hệ thống tự động thực hiện tìm kiếm subdomain, quét cổng, thu thập URL và phản hồi HTTP.
+    \item \textbf{Detection}: Phân tích dữ liệu thu thập để nhận diện công nghệ và phiên bản ứng dụng.
+    \item \textbf{CVE Service}: Ánh xạ công nghệ nhận diện được với cơ sở dữ liệu lỗ hổng (NVD) để tạo danh sách các mục tiêu có khả năng tồn tại lỗ hổng.
+    \item \textbf{Exploitation}: Người dùng chọn mã khai thác phù hợp và thực thi trên mục tiêu. Hệ thống hỗ trợ mở listener và ghi lại C2 session.
+    \item \textbf{Reporting}: Toàn bộ kết quả được lưu trữ và xuất thành báo cáo phục vụ phân tích.
+\end{enumerate}
+
+\subsection{Công nghệ sử dụng}
+Công cụ được thiết kế theo mô hình plugin portable giúp dễ dàng tích hợp. Các công nghệ chính được sử dụng bao gồm:
+
+\begin{table}[htbp]
+\centering
+\caption{Công nghệ sử dụng trong AutoScanCVE}
+\label{tab:autosancve_tech}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Thành phần} & \textbf{Công nghệ} \\ \hline
+Web Framework & Flask (Blueprint pattern) \\ \hline
+HTTP Client & requests (Session \& User-Agent) \\ \hline
+DNS Resolution & dnspython \\ \hline
+Đa luồng & concurrent.futures.ThreadPoolExecutor \\ \hline
+Cơ sở dữ liệu & SQLite (sqlite3) \\ \hline
+Scheduler & Thư viện schedule + daemon thread \\ \hline
+Detection Rules & JSON với regex patterns \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Các Module Chính}
+\textbf{(1) Module cấu hình (PluginConfig)}: Quản lý tham số hệ thống như timeout HTTP (mặc định 8s), delay (500-800ms) và số thread (tối đa 20).
+
+\textbf{(2) Module nhận dạng (Product/Version Identification)}: Thu thập tối thiểu 3 HTTP request (trang chủ, trang 404 giả, website probe) và khớp quy tắc dựa trên headers (độ tin cậy 90\%) và nội dung HTML (độ tin cậy 80\%).
+
+\textbf{(3) Bộ Quét Nâng Cao (Advanced Scanner)}: Bao gồm SubdomainScanner (DNS bruteforce) và DirectoryScanner (HTTP bruteforcing tương tự Gobuster).
+
+\textbf{(4) Module Giám Sát (Tracking System)}: Giám sát mục tiêu định kỳ với SQLite persistence, so sánh kết quả để phát hiện các sự kiện thay đổi.
+
 \section{Đánh giá công cụ và xác thực thực nghiệm}
 \subsection{Các công cụ kiểm thử chủ đạo}
 \subsubsection{Nền tảng tích hợp và công cụ quét}
